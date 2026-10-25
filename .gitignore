@@ -1,0 +1,11 @@
+# Virtual Environment 
+env-depok-house/
+venv/
+env/
+.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+

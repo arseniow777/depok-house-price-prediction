@@ -3,8 +3,20 @@ import numpy as np
 import pandas as pd
 
 
+def _to_dict(obj):
+    if isinstance(obj, dict):
+        return obj
+    if hasattr(obj, "to_dict"):
+        return obj.to_dict()
+    return dict(obj)
+
+
 def load_artifact(path):
-    return joblib.load(path)
+    artifact = joblib.load(path)
+    artifact["kec_target_map"] = _to_dict(artifact["kec_target_map"])
+    if "median_per_kec" in artifact:
+        artifact["median_per_kec"] = _to_dict(artifact["median_per_kec"])
+    return artifact
 
 
 def encode_kecamatan(kecamatan, kec_target_map):

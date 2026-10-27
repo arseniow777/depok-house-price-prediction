@@ -56,7 +56,7 @@ st.markdown(
     'ditenagai model machine learning hasil riset.</div>', unsafe_allow_html=True)
 st.markdown('<hr class="hd-divider">', unsafe_allow_html=True)
 
-tab_predict, tab_about = st.tabs(["🔮  Prediksi", "ℹ️  Tentang & Panduan"])
+tab_predict, tab_about = st.tabs(["Prediksi", "Tentang & Panduan"])
 
 with tab_predict:
     col_left, col_right = st.columns([1, 1.3], gap="large")
